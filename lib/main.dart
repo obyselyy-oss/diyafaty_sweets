@@ -8,15 +8,18 @@ class ScreenA extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('screen one 1')),
+      appBar: AppBar(title: const Text('Screen One')),
       body: Center(
         child: GestureDetector(
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) => const ScreenB()));
           },
-          child: const Hero(
-            tag: 'star-icon',
-            child: Icon(Icons.star, size: 50, color: Colors.orange),
+          child: Hero(
+            tag: 'logo-hero',
+            child: Image.asset(
+              'assets/logo.png',
+              height: 100,
+            ),
           ),
         ),
       ),
@@ -30,14 +33,17 @@ class ScreenB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('screen tow 2')),
+      appBar: AppBar(title: const Text('Screen Two')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Hero(
-              tag: 'star-icon',
-              child: Icon(Icons.star, size: 250, color: Colors.orange),
+            Hero(
+              tag: 'code-hero',
+              child: Image.asset(
+                'assets/code.png',
+                height: 300,
+              ),
             ),
             const SizedBox(height: 50),
             ElevatedButton(
