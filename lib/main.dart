@@ -12,14 +12,14 @@ class ScreenA extends StatelessWidget {
       body: Center(
         child: GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => const ScreenB()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const ScreenB()),
+            );
           },
           child: Hero(
             tag: 'logo-hero',
-            child: Image.asset(
-              'assets/logo.png',
-              height: 100,
-            ),
+            child: Image.asset('assets/logo.png', height: 100),
           ),
         ),
       ),
@@ -34,16 +34,22 @@ class ScreenB extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Screen Two')),
-      body: Center(
+      body: Container(
+        width: 500,
+        height: 900,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/mymage.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Hero(
               tag: 'code-hero',
-              child: Image.asset(
-                'assets/code.png',
-                height: 300,
-              ),
+              child: Image.asset('assets/code.png', height: 300),
             ),
             const SizedBox(height: 50),
             ElevatedButton(
